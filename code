@@ -1,0 +1,19 @@
+class Solution{
+    public:
+    int minSubset(vector<int> &arr,int n){
+       
+      long long int halfsum=0,currsum=0,res=0; 
+       for(int i=0;i<n;i++)
+        halfsum+=arr[i];
+        halfsum=halfsum/2;
+        sort(arr.begin(),arr.end(),greater <int>());
+        for(int i=0;i<n;i++)
+        {currsum+=arr[i];
+        res++;
+        if(currsum>halfsum) 
+           break; 
+        }
+        return res;
+        
+    }
+};
